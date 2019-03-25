@@ -2,7 +2,7 @@
 Follow this format for making contributions to encryption algorithms
 '''
 import itertools
-class ABC:
+class Algo1:
         def __init__(self):
                 pass
         def encrypt(self,orig_word,key):
@@ -18,7 +18,7 @@ class ABC:
 Original_password=input('Enter a password')
 arr=["".join(perm) for perm in itertools.permutations(Original_password)]
 length=len(arr)
-obj=ABC()
+obj=Algo1()
 X=obj.encrypt(Original_password,10)
 print("Encrypted Password:",X)
 print("Decrypted Password:",obj.decrypt(X,10))
