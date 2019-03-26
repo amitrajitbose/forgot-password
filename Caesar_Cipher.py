@@ -6,19 +6,12 @@ class Caesar_Cipher:
     def __init__(self):
         pass
 
-    def _ensure_range(self, n):
-        if(n%127 < 32):
-            return 32 + (n%127)
-        if(n < 32):
-            return 127-(32-n)
-        return n % 127
-
     def encrypt(self, password, key):
         key = key % 32
         password = list(password)
         new_password = []
         for i in password:
-            new_password.append(chr(self._ensure_range(ord(i)+key)))
+            new_password.append(chr(ord(i)+key))
         return ''.join(new_password)
 
     def decrypt(self, password, key):
@@ -26,11 +19,10 @@ class Caesar_Cipher:
         original_password = []
         password = list(password)
         for i in password:
-            original_password.append(chr(self._ensure_range(ord(i)-key)))
+            original_password.append(chr(ord(i)-key))
         return ''.join(original_password)
 
-    def debug(self, str, k):
-        if(self.decrypt(self.encrypt(str,k),k)):
+    def _debug(self, strr, k):
+        if(self.decrypt(self.encrypt(strr,k),k) == strr):
             return True
         return False
-
