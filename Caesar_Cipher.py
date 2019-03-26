@@ -34,7 +34,3 @@ class Caesar_Cipher:
             return True
         return False
 
-obj = Caesar_Cipher()
-print(obj.encrypt('RAJAT',267532))
-print(obj.encrypt('rajA~',267532))
-print(obj.debug('jhjFKVJ8763 87#57)(&^5~',72343946))
